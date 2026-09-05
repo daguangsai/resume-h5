@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<meta name="theme-color" content="#101010"/>
+<title>林慧君｜互动作品集 V5</title>
+<meta name="description" content="林慧君｜上海理工大学广告学｜推免互动作品集｜韧劲、探索、AI｜AIGC + 品牌传播"/>
+<style>
+:root{
+  --ink:#101010; --paper:#f3f0e8; --red:#d20d2d; --orange:#f08a34; --cyan:#35bdf2;
+  --muted:#8c8c84; --line:rgba(243,240,232,.18); --card:#171717; --soft:#c9c7bf;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth;background:var(--ink)}
+body{margin:0;background:var(--ink);color:var(--paper);font-family:Inter,"Helvetica Neue","PingFang SC","Noto Sans CJK SC","Microsoft YaHei",Arial,sans-serif;overflow-x:hidden}
+a{color:inherit;text-decoration:none} button{font:inherit}.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;letter-spacing:.05em}
+::selection{background:var(--red);color:white}
+.noise{position:fixed;inset:0;pointer-events:none;z-index:1000;opacity:.045;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E")}
+.grid{position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(to bottom,rgba(0,0,0,.82),transparent 78%);transition:.35s opacity}.grid.off{opacity:0}
+.cursor,.cursor-dot{position:fixed;z-index:1100;pointer-events:none;border-radius:50%;transform:translate(-50%,-50%);mix-blend-mode:difference}.cursor{width:34px;height:34px;border:1px solid #fff;transition:width .16s,height .16s,background .16s}.cursor-dot{width:5px;height:5px;background:#fff}
+.progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--red),var(--orange),var(--cyan));z-index:1200;width:0}
+nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:16px 28px;display:flex;align-items:center;justify-content:space-between;backdrop-filter:blur(15px);background:linear-gradient(to bottom,rgba(16,16,16,.88),rgba(16,16,16,.08))}
+.brand{font-weight:850;letter-spacing:-.04em}.navlinks{display:flex;gap:22px;font-size:12px;color:#c7c7bf}.navlinks a{position:relative}.navlinks a:after{content:"";position:absolute;left:0;right:100%;bottom:-5px;height:1px;background:var(--cyan);transition:.25s}.navlinks a:hover:after{right:0}
+.navright{display:flex;align-items:center;gap:10px}.sound{border:1px solid var(--line);background:rgba(255,255,255,.03);color:#ddd;border-radius:999px;padding:8px 11px;font-size:10px;letter-spacing:.08em;cursor:pointer}.sound.on{background:var(--paper);color:#111}
+main{position:relative;z-index:2}.section{min-height:100vh;padding:110px 5vw 72px;position:relative}.eyebrow{font-size:11px;text-transform:uppercase;color:var(--cyan);letter-spacing:.24em;margin-bottom:16px}.section-title{font-size:clamp(44px,7vw,104px);line-height:.88;letter-spacing:-.07em;margin:0}.section-title .red{color:var(--red)}
+.hero{display:grid;grid-template-columns:1.16fr .84fr;align-items:center;gap:3vw;min-height:100vh;padding-top:80px}.hero-copy{position:relative}.hero .kicker{font-size:13px;color:var(--muted);margin-bottom:20px}.hero h1{font-size:clamp(72px,11vw,160px);line-height:.78;letter-spacing:-.085em;margin:0;font-weight:900}.hero h1 span{display:block}.hero h1 .accent{font-size:.42em;color:var(--cyan);font-family:Georgia,serif;font-style:italic;font-weight:400;letter-spacing:-.03em;margin-top:.22em}
+.hero-sub{margin-top:32px;display:flex;gap:24px;align-items:flex-start;max-width:780px}.hero-sub p{margin:0;max-width:590px;color:#c7c7bf;font-size:16px;line-height:1.7}.tag{border:1px solid var(--line);padding:10px 14px;border-radius:999px;font-size:11px;white-space:nowrap;background:rgba(255,255,255,.02)}
+.portrait-wrap{position:relative;height:min(70vh,680px);display:flex;align-items:center;justify-content:center}.portrait-wrap:before{content:"";position:absolute;width:78%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 45% 40%,rgba(53,189,242,.26),rgba(210,13,45,.20) 42%,transparent 69%);filter:blur(8px)}.portrait{height:82%;max-width:92%;object-fit:contain;position:relative;z-index:3;filter:drop-shadow(0 30px 50px rgba(0,0,0,.45))}.orbit{position:absolute;border:1px solid rgba(255,255,255,.18);border-radius:50%;width:78%;aspect-ratio:1;animation:spin 15s linear infinite}.orbit:before{content:"RESEARCH × CREATIVE × PRACTICE";position:absolute;top:-12px;left:19%;font-size:9px;letter-spacing:.22em;color:var(--red);background:var(--ink);padding:4px 8px}@keyframes spin{to{transform:rotate(360deg)}}
+.statbar{position:absolute;left:5vw;right:5vw;bottom:30px;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.stat{padding:15px 14px;border-right:1px solid var(--line)}.stat:last-child{border-right:0}.stat strong{font-size:30px;color:var(--cyan);font-family:Georgia,serif;font-style:italic;font-weight:400}.stat span{display:block;font-size:10px;color:#aaa;margin-top:4px;text-transform:uppercase;letter-spacing:.12em}
+.ticker{overflow:hidden;border-top:1px solid rgba(255,255,255,.25);border-bottom:1px solid rgba(255,255,255,.25);padding:11px 0;background:var(--red);color:white}.ticker-track{display:flex;width:max-content;animation:marquee 24s linear infinite}.ticker:hover .ticker-track{animation-play-state:paused}.ticker span{font-weight:780;font-size:14px;letter-spacing:.045em;padding-right:48px}.ticker i{font-family:Georgia,serif;font-weight:400;font-size:17px}@keyframes marquee{to{transform:translateX(-50%)}}
+
+.resilience{display:grid;grid-template-columns:.78fr 1.22fr;gap:5vw;align-items:start}.sticky{position:sticky;top:104px}.manifesto{font-size:clamp(34px,4.3vw,66px);line-height:1;letter-spacing:-.055em;margin:20px 0}.manifesto em{color:var(--cyan);font-family:Georgia,serif;font-weight:400}.smallcopy{color:#aaa;line-height:1.75;max-width:560px}
+.proof-stack{display:grid;gap:30px}.proof{border:1px solid var(--line);background:var(--card);padding:14px;position:relative;overflow:hidden;transform:translateY(30px);opacity:0;transition:.8s cubic-bezier(.2,.8,.2,1)}.proof.show{transform:none;opacity:1}.proof img{width:100%;display:block;transition:.55s transform,.55s filter}.proof:hover img{transform:scale(1.02);filter:saturate(1.05)}.proof-meta{display:flex;justify-content:space-between;align-items:end;padding:14px 4px 0;gap:20px}.proof-meta h3{margin:0;font-size:24px;letter-spacing:-.04em}.proof-meta p{margin:0;color:#999;font-size:12px;text-align:right;max-width:330px}.proof-no{position:absolute;right:16px;top:14px;font-family:Georgia,serif;color:var(--red);font-style:italic;font-size:38px;z-index:5}
+.gpa{padding:22px 24px 18px}.gpa-top{display:flex;justify-content:space-between;gap:25px;align-items:end}.gpa-top h3{font-size:clamp(28px,3.4vw,48px);margin:0;letter-spacing:-.05em}.delta{font-size:clamp(32px,5vw,72px);color:var(--red);font-family:Georgia,serif;font-style:italic}.chart{height:300px;margin-top:10px}.chart svg{width:100%;height:100%;overflow:visible}.gpa-line{fill:none;stroke:var(--cyan);stroke-width:3;stroke-dasharray:1200;stroke-dashoffset:1200;transition:1.8s cubic-bezier(.16,1,.3,1)}.proof.show .gpa-line{stroke-dashoffset:0}.gpa-dot{fill:var(--ink);stroke:var(--cyan);stroke-width:2}.gpa-label{fill:#f3f0e8;font-size:12px}.gpa-sem{fill:#777;font-size:10px}.gpa-grid{stroke:rgba(255,255,255,.08);stroke-width:1}
+.double{display:grid;grid-template-columns:1fr 1fr;gap:12px}.double img{width:100%;height:340px;object-fit:contain;background:#f1eee8}
+.practice-img{height:420px;object-fit:cover!important}.inline-pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}.mini{border:1px solid var(--line);border-radius:999px;padding:7px 9px;font-size:10px;color:#bbb}
+
+.competition{overflow:hidden}.comp-head{display:flex;justify-content:space-between;align-items:end;gap:30px}.drag-hint{font-size:11px;color:#aaa;border:1px solid var(--line);border-radius:100px;padding:9px 13px}.rail{display:flex;gap:22px;overflow-x:auto;scrollbar-width:none;padding:45px 5vw 50px;margin:0 -5vw;cursor:grab}.rail::-webkit-scrollbar{display:none}.rail.grabbing{cursor:grabbing}
+.award{flex:0 0 min(39vw,500px);background:var(--paper);color:var(--ink);padding:12px;border-radius:2px;transition:.34s transform;position:relative}.award:nth-child(even){transform:rotate(1deg)}.award:nth-child(odd){transform:rotate(-.9deg)}.award:hover{transform:rotate(0) translateY(-10px)}.award-visual{height:370px;display:grid;grid-template-columns:1fr;background:white;overflow:hidden}.award-visual.duo{grid-template-columns:1fr 1fr}.award-visual img,.award-visual video{width:100%;height:100%;object-fit:contain;background:white;display:block}.award-visual video{object-fit:cover;background:#000}.award-info{display:grid;grid-template-columns:48px 1fr;gap:12px;padding:14px 6px 8px}.award-index{font-family:Georgia,serif;font-style:italic;color:var(--red);font-size:26px}.award h4{margin:0 0 5px;font-size:20px;letter-spacing:-.03em}.award p{margin:0;color:#555;font-size:11px;line-height:1.55}.award .pill{position:absolute;top:20px;right:20px;background:var(--cyan);color:#071015;font-size:9px;padding:6px 8px;font-weight:800;letter-spacing:.08em;z-index:4}.actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}.btn{display:inline-flex;align-items:center;gap:6px;border:1px solid #bdbab2;padding:7px 9px;border-radius:999px;font-size:10px;background:transparent;color:#111;cursor:pointer}.btn:hover{background:#111;color:white}.btn.dark{border-color:var(--line);color:#ddd}.btn.dark:hover{background:var(--paper);color:#111}
+
+.ai-zone{background:radial-gradient(circle at 80% 12%,rgba(53,189,242,.13),transparent 30%),linear-gradient(#101010,#090b0d);border-top:1px solid rgba(53,189,242,.18)}
+.ai-head{display:flex;justify-content:space-between;align-items:end;gap:30px}.ai-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px;margin-top:44px}.ai-card{grid-column:span 6;min-height:520px;border:1px solid rgba(53,189,242,.18);background:#111518;position:relative;overflow:hidden}.ai-card.wide{grid-column:span 12;min-height:480px}.ai-card .visual{height:64%;position:relative;overflow:hidden;background:#0c0f11}.ai-card .visual img{width:100%;height:100%;object-fit:cover;display:block;transition:.7s transform}.ai-card:hover .visual img{transform:scale(1.035)}.ai-card .copy{padding:24px}.ai-card h3{font-size:clamp(28px,3vw,46px);margin:4px 0 10px;letter-spacing:-.05em}.ai-card p{color:#9eb0b8;font-size:13px;line-height:1.65}.cyan{color:var(--cyan)}.proof-chip{position:absolute;right:16px;top:16px;background:rgba(8,12,14,.7);border:1px solid rgba(53,189,242,.22);backdrop-filter:blur(12px);padding:7px 9px;border-radius:999px;font-size:9px;letter-spacing:.12em;z-index:5}
+.phone-stage{display:grid;grid-template-columns:.8fr 1.2fr;align-items:center;height:100%;gap:26px;padding:28px}.phones{display:flex;justify-content:center;gap:14px}.phone{width:min(190px,32vw);aspect-ratio:9/18;border:7px solid #24262a;border-radius:28px;overflow:hidden;background:#fff;box-shadow:0 25px 70px rgba(0,0,0,.45);transition:.4s transform}.phone:nth-child(2){transform:translateY(25px) rotate(2deg)}.phone:hover{transform:translateY(-5px)}.phone img{width:100%;height:100%;object-fit:cover}.device-live{height:310px;border:7px solid #25282b;border-radius:28px;overflow:hidden;background:white;box-shadow:0 25px 80px rgba(0,0,0,.46)}.device-live iframe{width:100%;height:100%;border:0}
+.research-map{min-height:500px;display:grid;align-content:center;padding:38px;background:radial-gradient(circle at 50% 50%,rgba(53,189,242,.10),transparent 38%),#0b0d0f}.research-map h3{font-size:clamp(38px,6vw,88px);line-height:.97;letter-spacing:-.055em;margin:10px 0 18px;max-width:1050px}.terms{display:flex;gap:8px;flex-wrap:wrap}.terms span{border:1px solid rgba(53,189,242,.22);border-radius:999px;padding:9px 12px;color:#a9bec7;font-size:11px;transition:.25s}.terms span:hover{background:var(--cyan);color:#071015}
+
+.archive{background:var(--paper);color:var(--ink);min-height:auto}.archive .eyebrow{color:var(--red)}.masonry{columns:4 250px;column-gap:15px;margin-top:36px}.tile{break-inside:avoid;margin:0 0 15px;background:white;border:1px solid #ddd;padding:8px;cursor:zoom-in;transition:.25s transform,.25s box-shadow}.tile:hover{transform:translateY(-4px) rotate(.35deg);box-shadow:0 16px 30px rgba(0,0,0,.13)}.tile img{width:100%;display:block;max-height:420px;object-fit:contain;background:white}.tile.feature img{max-height:none}.tile figcaption{font-size:11px;color:#555;padding:9px 3px 3px;display:flex;justify-content:space-between;gap:12px}.tile figcaption b{color:var(--ink)}
+.video-stage{background:#0d0d0e}.video-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:40px}.video-card{border:1px solid var(--line);background:#131313;overflow:hidden}.video-card video{width:100%;aspect-ratio:16/9;display:block;background:#000}.video-card .copy{padding:20px}.video-card h3{font-size:clamp(28px,3.5vw,48px);margin:5px 0}.video-card p{color:#888;margin:0}
+footer{padding:85px 5vw 45px;background:var(--ink);border-top:1px solid var(--line)}.footer-big{font-size:clamp(54px,9vw,130px);line-height:.8;letter-spacing:-.08em;margin:0}.footer-big .cyan{color:var(--cyan);font-family:Georgia,serif;font-style:italic;font-weight:400}.footer-copy{max-width:760px;margin-top:30px;color:#999;line-height:1.7}.footer-bottom{display:flex;justify-content:space-between;margin-top:50px;color:#777;font-size:11px;gap:20px;flex-wrap:wrap}.kbd{border:1px solid #444;border-bottom-width:2px;border-radius:4px;padding:2px 5px;color:#aaa}
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.94);z-index:1500;display:none;align-items:center;justify-content:center;padding:5vw;backdrop-filter:blur(12px)}.lightbox.open{display:flex}.lightbox img{max-width:90vw;max-height:84vh;object-fit:contain;box-shadow:0 30px 90px rgba(0,0,0,.5)}.lightbox .close{position:absolute;right:24px;top:20px;font-size:12px;border:1px solid #555;padding:8px 11px;border-radius:99px;cursor:pointer}
+.reveal{opacity:0;transform:translateY(24px);filter:blur(4px);transition:.82s cubic-bezier(.2,.8,.2,1)}.reveal.show{opacity:1;transform:none;filter:none}
+[data-parallax]{will-change:transform}
+@media(max-width:980px){.cursor,.cursor-dot{display:none}.navlinks{display:none}.hero{grid-template-columns:1fr;padding-bottom:150px}.portrait-wrap{height:48vh}.statbar{grid-template-columns:repeat(2,1fr)}.resilience{grid-template-columns:1fr}.sticky{position:relative;top:auto}.award{flex-basis:78vw}.ai-card{grid-column:span 12}.phone-stage{grid-template-columns:1fr}.video-grid{grid-template-columns:1fr}.section{padding-left:22px;padding-right:22px}.masonry{columns:2 220px}}
+@media(max-width:560px){.hero h1{font-size:20vw}.hero-sub{flex-direction:column}.masonry{columns:1}.award{flex-basis:88vw}.award-visual{height:300px}.stat strong{font-size:23px}.double{grid-template-columns:1fr}.double img{height:280px}.navright .mono{display:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal,.proof{opacity:1;transform:none;filter:none}.gpa-line{stroke-dashoffset:0}}
+
+.navlinks a.active{color:var(--cyan)}.navlinks a.active:after{right:0}
+:focus-visible{outline:3px solid var(--cyan);outline-offset:5px}
+.rail-controls{display:flex;gap:14px;align-items:center}.rail-controls button{font-size:22px;min-width:44px;justify-content:center}.rail-controls button:disabled{opacity:.3;cursor:default}
+.archive-filters{display:flex;gap:10px;flex-wrap:wrap;margin-top:34px}.filter{border:1px solid #aaa;background:transparent;border-radius:24px;padding:11px 18px;cursor:pointer}.filter.active{background:var(--ink);color:var(--paper)}.archive-count{font-size:12px;color:#666}.masonry{margin-top:18px}.tile[hidden]{display:none}
+.rotated-frame{position:relative;aspect-ratio:1;overflow:hidden}.rotated-frame img{position:absolute;inset:0;width:100%;height:100%;max-height:none;object-fit:contain;transform:rotate(270deg)}
+.back-top{position:fixed;bottom:22px;right:22px;z-index:510;border:1px solid #777;background:#101010e8;color:var(--paper);border-radius:28px;padding:12px;cursor:pointer;display:flex;gap:8px;align-items:center;font-size:13px}
+.lightbox button{background:#171717;color:white;border:1px solid #777;cursor:pointer;padding:12px 16px;border-radius:24px}.lb-prev,.lb-next{position:absolute;top:50%;z-index:2}.lb-prev{left:16px}.lb-next{right:16px}.lb-caption{position:absolute;bottom:16px;left:12%;right:12%;text-align:center;font-size:13px;color:#ccc}.lightbox img{max-width:80vw;max-height:76vh}.lightbox img.rotated{max-width:76vh;max-height:80vw;transform:rotate(270deg)}
+.statbar{grid-template-columns:repeat(4,minmax(0,1fr))}.stat .school-type{font-family:inherit;font-style:normal;font-size:24px;letter-spacing:0}
+@media(max-width:980px){.statbar{grid-template-columns:repeat(2,minmax(0,1fr))}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+@media(max-width:560px){.stat .school-type{font-size:20px}}
+@media(max-width:560px){.comp-head{align-items:start;flex-direction:column}.stat{padding:12px 7px}.stat span{letter-spacing:0}.lb-prev{left:4px}.lb-next{right:4px}.lightbox button{padding:10px}.back-top{bottom:12px;right:12px}}
+
+.portrait{border-radius:50%;width:min(440px,82%);height:auto;aspect-ratio:1;object-fit:cover}
+.innovation-visuals{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:18px;padding:18px;background:#111518}
+.innovation-card .innovation-visuals .visual{height:520px;min-width:0;background:#eae8de}
+.innovation-card .innovation-visuals img{width:100%;height:100%;object-fit:contain}
+.innovation-card .copy{max-width:1000px}.innovation-card h3{font-size:clamp(28px,3.6vw,48px)}
+.footer-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:5vw;align-items:center}
+.footer-layout .footer-big{font-size:clamp(54px,7vw,106px)}
+.footer-photo{display:block;width:100%;height:auto;border-radius:4px;cursor:zoom-in}
+@media(max-width:700px){.innovation-visuals{gap:10px;padding:10px;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.innovation-card .innovation-visuals .visual{height:310px}.innovation-card .proof-chip{font-size:8px;right:4px;top:5px;max-width:95%;padding:5px}.footer-layout{grid-template-columns:1fr;gap:25px}}
+</style>
+</head>
+<body>
+<div class="noise"></div><div class="grid" id="grid"></div><div class="progress" id="progress"></div><div class="cursor"></div><div class="cursor-dot"></div>
+<nav>
+  <a class="brand" href="#top">林慧君 <span style="color:var(--red)">/</span> PORTFOLIO</a>
+  <div class="navlinks mono"><a href="#resilience">01 韧劲</a><a href="#explore">02 探索</a><a href="#ai">03 AI</a><a href="#archive">04 MORE</a></div>
+  <div class="navright"><span class="mono" style="font-size:10px;color:#777">USST / 2027</span><button id="sound" class="sound">SOUND OFF</button></div>
+</nav>
+
+<main id="top">
+<section class="section hero">
+  <div class="hero-copy reveal">
+    <div class="kicker mono">ADVERTISING · RESEARCH · CREATIVE STRATEGY</div>
+    <h1><span>林慧君</span><span class="accent">Jennifer.</span></h1>
+    <div class="hero-sub"><span class="tag mono">韧劲 · 探索 · AI</span><p>三年里，我持续把学习能力、真实问题与创作实践放在一起：用韧劲不断校准自己，用探索走近具体问题，再把 AI 变成可以落地的创作与研究方法。</p></div>
+  </div>
+  <div class="portrait-wrap reveal"><div class="orbit"></div><img class="portrait" src="assets/1.jpg" alt="林慧君卡通头像" data-parallax></div>
+  <div class="statbar">
+    <div class="stat"><strong>92.86</strong><span>加权平均分</span></div>
+    <div class="stat"><strong>4 / 30</strong><span>排名</span></div>
+    <div class="stat"><strong>6 段</strong><span>实习工作</span></div>
+    <div class="stat"><strong class="school-type">部市共建高校</strong><span>上海理工大学</span></div>
+  </div>
+</section>
+
+<div class="ticker" aria-label="部分课程成绩"><div class="ticker-track">
+  <span>学术论文写作规范 <i>100</i></span><span>短视频创作与营销 <i>100</i></span><span>广告媒体研究 <i>99</i></span><span>品牌战略与管理 <i>99</i></span><span>网络广告学 <i>98</i></span><span>新闻采访与写作 <i>97</i></span><span>新闻传播学研究方法 <i>93</i></span>
+  <span>学术论文写作规范 <i>100</i></span><span>短视频创作与营销 <i>100</i></span><span>广告媒体研究 <i>99</i></span><span>品牌战略与管理 <i>99</i></span><span>网络广告学 <i>98</i></span><span>新闻采访与写作 <i>97</i></span><span>新闻传播学研究方法 <i>93</i></span>
+</div></div>
+
+<section class="section resilience" id="resilience">
+  <div class="sticky reveal">
+    <div class="eyebrow mono">01 / RESILIENCE</div>
+    <h2 class="section-title">持续修正，<br><span class="red">也持续向前。</span></h2>
+    <p class="manifesto">发现不足，<br>就继续<em>补足。</em></p>
+    <p class="smallcopy">本科阶段，我把“进步”理解为一种持续校准：成绩稳步提升、主动补足英语与专业阅读能力，也不断进入真实广告项目，把实践反馈重新带回课堂。</p>
+  </div>
+  <div class="proof-stack">
+    <article class="proof gpa reveal">
+      <div class="proof-no">01</div>
+      <div class="gpa-top"><div><div class="eyebrow mono">ACADEMIC TRAJECTORY</div><h3>三年绩点持续上升</h3><p class="smallcopy" style="margin:6px 0 0">3.57 → 3.89 → 4.19 → 4.29 → 4.33 → 4.36</p></div><div class="delta">+0.79</div></div>
+      <div class="chart"><svg viewBox="0 0 760 250" preserveAspectRatio="none">
+        <path class="gpa-grid" d="M40 205H730 M40 150H730 M40 95H730 M40 40H730"/>
+        <polyline class="gpa-line" points="48,207 178,155 308,99 438,80 568,71 698,66"/>
+        <circle class="gpa-dot" cx="48" cy="207" r="5"/><text class="gpa-label" x="48" y="192">3.57</text><text class="gpa-sem" x="48" y="230">23-1</text>
+        <circle class="gpa-dot" cx="178" cy="155" r="5"/><text class="gpa-label" x="178" y="140">3.89</text><text class="gpa-sem" x="178" y="230">23-2</text>
+        <circle class="gpa-dot" cx="308" cy="99" r="5"/><text class="gpa-label" x="308" y="84">4.19</text><text class="gpa-sem" x="308" y="230">24-1</text>
+        <circle class="gpa-dot" cx="438" cy="80" r="5"/><text class="gpa-label" x="438" y="65">4.29</text><text class="gpa-sem" x="438" y="230">24-2</text>
+        <circle class="gpa-dot" cx="568" cy="71" r="5"/><text class="gpa-label" x="568" y="56">4.33</text><text class="gpa-sem" x="568" y="230">25-1</text>
+        <circle class="gpa-dot" cx="698" cy="66" r="5"/><text class="gpa-label" x="698" y="51">4.36</text><text class="gpa-sem" x="698" y="230">25-2</text>
+      </svg></div>
+      <div class="proof-meta"><h3>成绩是轨迹，不是一个静态数字。</h3><p>GPA 4.09 / 加权 92.86 / 专业 4/30</p></div>
+    </article>
+
+    <article class="proof reveal">
+      <div class="proof-no">03</div>
+      <img class="zoomable" src="assets/3.png" alt="专业双语课程课堂报告">
+      <div class="proof-meta"><h3>从考试，到专业阅读与表达。</h3><p>通过专业双语课程训练阅读与表达。目前已有英文论文成果，具备初步英文文献研读能力。</p></div>
+    </article>
+
+    <article class="proof reveal">
+      <div class="proof-no">05</div><img class="zoomable practice-img" src="assets/5.jpg" alt="阳狮实际项目产出">
+      <div class="proof-meta"><h3>把真实项目里的问题，带回课堂。</h3><p>通过广告与营销实践，在“理论—实践—复盘”之间往返，让行业反馈反哺专业学习。</p></div>
+      <div class="inline-pills"><span class="mini">INSIGHT</span><span class="mini">SOCIAL</span><span class="mini">STRATEGY</span><span class="mini">REVIEW</span></div>
+    </article>
+  </div>
+</section>
+
+<section class="section competition" id="explore">
+  <div class="comp-head reveal"><div><div class="eyebrow mono">02 / EXPLORE</div><h2 class="section-title">把观察变成问题，<br><span style="color:var(--cyan)">再走近答案。</span></h2></div><div class="rail-controls"><button class="btn dark" id="railPrev" aria-label="上一个作品">←</button><span id="railCount" class="mono" aria-live="polite">1 / 6</span><button class="btn dark" id="railNext" aria-label="下一个作品">→</button></div></div>
+  <div class="rail" id="rail">
+    <article class="award zoomable">
+      <span class="pill">RESEARCH</span><div class="award-visual duo"><img src="assets/7.png" alt="论文录用证明"><img src="assets/8.png" alt="论文首页"></div>
+      <div class="award-info"><div class="award-index">01</div><div><h4>英文会议论文</h4><p>从设计判断出发，尝试用研究方法解释“为什么这样焕新”。</p></div></div>
+    </article>
+
+    <article class="award zoomable">
+      <span class="pill">BRAND</span><div class="award-visual"><img src="assets/10.png" alt="坭兴陶代表作品图"></div>
+      <div class="award-info"><div class="award-index">02</div><div><h4>坭兴陶｜家乡非遗</h4><p>从年轻消费者与数字传播场景出发，重新思考传统工艺如何进入当代生活。</p><div class="actions"><button class="btn lightbox-btn" data-src="assets/9.png">证明 ↗</button></div></div></div>
+    </article>
+
+    <article class="award zoomable">
+      <span class="pill">IP DESIGN</span><div class="award-visual"><img src="assets/12.jpg" alt="梅梅IP主视觉"></div>
+      <div class="award-info"><div class="award-index">03</div><div><h4>“梅梅”IP｜米兰设计周</h4><p>从江西萍乡杨梅养殖基地出发，让乡村设计真正对应产地、产品与传播场景。</p><div class="actions"><button class="btn lightbox-btn" data-src="assets/11.png">证明 ↗</button></div></div></div>
+    </article>
+
+    <article class="award zoomable">
+      <span class="pill">FIELD RESEARCH</span><div class="award-visual"><img src="assets/15.png" alt="宠物殡葬调研核心数据"></div>
+      <div class="award-info"><div class="award-index">04</div><div><h4>宠物殡葬市调</h4><p>从问卷与调研数据进入具体消费情境，理解宠物离世背后的消费与情感需求。</p><div class="actions"><button class="btn lightbox-btn" data-src="assets/13.jpg">证明 ↗</button></div></div></div>
+    </article>
+
+    <article class="award">
+      <span class="pill">DATA JOURNALISM</span><div class="award-visual"><video src="assets/18.mp4" poster="assets/17.png" muted playsinline controls preload="metadata"></video></div>
+      <div class="award-info"><div class="award-index">05</div><div><h4>《盲道好忙》</h4><p>从日常观察进入视障人士真实出行困境，用数据新闻让被习惯化的问题重新可见。</p><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://v.xiumius.cn/stage/v5/6EoEU/653453662">打开作品 ↗</a></div></div></div>
+    </article>
+
+    <article class="award zoomable">
+      <span class="pill">STORY</span><div class="award-visual"><img src="assets/21.jpg" alt="心理剧舞台剧照"></div>
+      <div class="award-info"><div class="award-index">06</div><div><h4>全国百佳心理剧</h4><p>在编剧与表演过程中，通过角色讨论理解人物动机、关系与情绪。</p><div class="actions"><button class="btn lightbox-btn" data-src="assets/20.png">证明 ↗</button></div></div></div>
+    </article>
+  </div>
+</section>
+
+<section class="section ai-zone" id="ai">
+  <div class="ai-head reveal"><div><div class="eyebrow mono">03 / AI</div><h2 class="section-title">从使用 AI，<br><span class="red">到开始研究 AI。</span></h2></div><p class="smallcopy">我的兴趣逐渐从“AI 能做什么”，走向“AI 如何改变内容生产、互动体验与品牌传播”。</p></div>
+
+  <div class="ai-grid">
+    <article class="ai-card wide reveal innovation-card">
+      <div class="innovation-visuals"><div class="visual original-preview"><img class="zoomable" src="assets/24.png" alt="国家级大创 AI 代表作品"></div><div class="visual h5-preview"><img class="zoomable" src="assets/24-h5-preview.png" alt="《清风之诺》交互作品首页实景截图"><span class="proof-chip">国家级大创 · H5 交互作品</span></div></div>
+      <div class="copy"><div class="eyebrow mono">AI.01 / NATIONAL INNOVATION</div><h3>《清风之诺》｜AIGC 交互叙事</h3><p>作为国家级大创项目负责人，探索 AIGC 在内容创作中的应用。《清风之诺》以包拯端州辞行为故事线，结合 AIGC 生成图像、AI 配音等方式，将视觉、声音与页面交互融入 H5 作品。</p><div class="actions"><button class="btn dark lightbox-btn" data-src="assets/23.png">项目证明 ↗</button><a class="btn dark" target="_blank" rel="noopener" href="https://v.xiumi.us/stage/v5/6EoEU/660473983">体验《清风之诺》H5 ↗</a></div></div>
+    </article>
+
+    <article class="ai-card wide reveal">
+      <div class="phone-stage">
+        <div class="phones"><div class="phone"><img src="assets/27.jpg" alt="H5交互截图1"></div><div class="phone"><img src="assets/28.jpg" alt="H5交互截图2"></div></div>
+        <div><div class="eyebrow mono">AI.02 / AI CODING × H5</div><h3 style="font-size:clamp(36px,5vw,78px);line-height:.94;letter-spacing:-.06em;margin:0 0 16px">把创意写成一个<br><span class="cyan">真的可以玩的网页。</span></h3><p class="smallcopy">使用 AI 辅助编程完成 H5 交互，把视觉创意进一步变成用户可以实际操作的数字体验，并获得上海赛区银奖。</p><div class="actions"><a class="btn dark" target="_blank" rel="noopener" href="https://daguangsai.github.io/sanfu/">29 / TRY THE H5 ↗</a><button class="btn dark lightbox-btn" data-src="assets/26.png">26 / 获奖证明 ↗</button></div></div>
+      </div>
+    </article>
+
+    <article class="ai-card reveal">
+      <div class="visual"><div class="double" style="height:100%"><img class="zoomable" src="assets/30.png" alt="美食法庭全国三等奖"><img class="zoomable" src="assets/31.png" alt="美食法庭上海赛区金奖"></div></div>
+      <div class="copy"><div class="eyebrow mono">AI.03 / AI ANIMATION</div><h3>《美食法庭》</h3><p>将生成式 AI 引入动画创作流程，处理角色一致性、多模型协同、动作控制与最终内容表达。</p></div>
+    </article>
+
+    <article class="ai-card reveal research-map">
+      <div class="eyebrow mono">AI.04 / UNDERGRADUATE THESIS</div>
+      <h3>AIGC 品牌微电影广告的审美困境与突破路径研究</h3>
+      <p class="smallcopy">——以网易《天下》× 王祖贤《倩影》为例｜指导：上海理工大学 刘晓峰副教授</p>
+      <div class="terms"><span>AIGC</span><span>品牌传播</span><span>审美同质化</span><span>品牌叙事</span><span>生成式影像</span><span>消费者感知</span></div>
+    </article>
+  </div>
+</section>
+
+<section class="section archive" id="archive">
+  <div class="eyebrow mono reveal">04 / MORE · EVIDENCE ARCHIVE</div>
+  <h2 class="section-title reveal">更多实践，<br><span class="red">记录学习与成长。</span></h2>
+  <div class="archive-filters" role="group" aria-label="筛选实践记录"><button class="filter active" data-filter="all" aria-pressed="true">全部</button><button class="filter" data-filter="creative" aria-pressed="false">创意竞赛</button><button class="filter" data-filter="culture" aria-pressed="false">文化表达</button><button class="filter" data-filter="campus" aria-pressed="false">校园与服务</button></div><p id="archiveCount" aria-live="polite" class="archive-count">共 12 项记录</p><div class="masonry">
+    <figure class="tile zoomable"><img src="assets/32.png"><figcaption><b>文旅会展</b><span>全国一等奖</span></figcaption></figure>
+    <figure class="tile zoomable"><img src="assets/33.png"><figcaption><b>文旅会展</b><span>全国季军</span></figcaption></figure>
+    <figure class="tile zoomable feature"><img src="assets/34.png"><figcaption><b>苏香木兰</b><span>全国金奖 · 获奖作品封面</span></figcaption></figure>
+    <figure class="tile zoomable"><img src="assets/35.png"><figcaption><b>学院奖</b><span>代表荣誉 01</span></figcaption></figure>
+    <figure class="tile zoomable"><img src="assets/36.jpeg"><figcaption><b>学院奖</b><span>代表荣誉 02</span></figcaption></figure>
+    <figure class="tile zoomable"><img src="assets/37.png"><figcaption><b>挑战杯</b><span>校级一等奖</span></figcaption></figure>
+    <figure class="tile zoomable"><div class="rotated-frame"><img src="assets/38.jpg" alt="诗教中国获奖证明" data-rotate="270"></div><figcaption><b>诗教中国</b><span>上海赛区三等奖</span></figcaption></figure>
+    <figure class="tile zoomable"><img src="assets/39.jpeg"><figcaption><b>诵读中国</b><span>校级二等奖</span></figcaption></figure>
+    <figure class="tile zoomable"><img src="assets/40.jpeg"><figcaption><b>优秀学生奖学金</b><span>综合荣誉</span></figcaption></figure>
+    <figure class="tile zoomable"><img src="assets/41.jpeg"><figcaption><b>优秀志愿者</b><span>志愿服务</span></figcaption></figure>
+    <figure class="tile zoomable"><img src="assets/42.jpeg"><figcaption><b>上海书展</b><span>志愿服务</span></figcaption></figure>
+    <figure class="tile zoomable"><img src="assets/43.jpg"><figcaption><b>金话筒</b><span>十佳主持人</span></figcaption></figure>
+  </div>
+</section>
+
+<section class="section video-stage">
+  <div class="eyebrow mono reveal">SELECTED VIDEO WORKS</div>
+  <h2 class="section-title reveal">两段影像，<br><span style="color:var(--cyan)">继续往外走。</span></h2>
+  <div class="video-grid">
+    <article class="video-card reveal"><video src="assets/45.mp4" controls playsinline preload="metadata"></video><div class="copy"><div class="eyebrow mono">45 / VIDEO 01</div><h3>反诈骗宣传作品</h3><p>公共议题 × 影像表达</p></div></article>
+    <article class="video-card reveal"><video src="assets/47.mp4" poster="assets/48.jpg" controls playsinline preload="metadata"></video><div class="copy"><div class="eyebrow mono">47 / VIDEO 02</div><h3>广告作品</h3><p>“好吃就是豪士，豪士就是好吃”</p></div></article>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="footer-layout"><div>
+  <div class="eyebrow mono">FUTURE RESEARCH DIRECTION</div>
+  <p class="footer-big">AIGC <span style="color:var(--red)">×</span><br><span class="cyan">品牌传播</span></p>
+  <p class="footer-copy">未来，我希望继续研究生成式人工智能如何参与品牌内容生产、叙事与传播，并关注技术进入商业表达后带来的审美、创意与传播效果问题。</p>
+  </div><img class="zoomable footer-photo" width="959" height="419" src="assets/50-personal-photo.jpg" alt="林慧君手持相机的个人照片" loading="lazy"></div>
+  <div class="footer-bottom"><span>林慧君 · 上海理工大学广告学 · <a href="mailto:jennifer050201@163.com">jennifer050201@163.com</a></span><span><span class="kbd">G</span> 切换网格 · 点击图片放大 · SOUND 可开启声音反馈</span></div>
+</footer>
+
+
+<button class="back-top" aria-label="返回顶部">↑ <span id="readPercent">0%</span></button><div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="图片浏览" tabindex="-1"><button class="close mono">关闭 ×</button><button class="lb-prev" aria-label="上一张图片">←</button><img id="lightboxImg" alt="图片预览"><button class="lb-next" aria-label="下一张图片">→</button><p class="lb-caption" aria-live="polite"></p></div>
+
+<script>
+const q=s=>document.querySelector(s), qa=s=>[...document.querySelectorAll(s)];
+const progress=q('#progress');
+addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-innerHeight;progress.style.width=(h>0?scrollY/h*100:0)+'%'},{passive:true});
+
+// cursor
+const cur=q('.cursor'),dot=q('.cursor-dot');
+addEventListener('pointermove',e=>{dot.style.left=e.clientX+'px';dot.style.top=e.clientY+'px';cur.animate({left:e.clientX+'px',top:e.clientY+'px'},{duration:170,fill:'forwards'})});
+qa('a,button,.zoomable,.award,video').forEach(el=>{el.addEventListener('pointerenter',()=>{cur.style.width='58px';cur.style.height='58px';sfx('hover')});el.addEventListener('pointerleave',()=>{cur.style.width='34px';cur.style.height='34px'})});
+
+// reveal
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
+qa('.reveal,.proof').forEach(x=>io.observe(x));
+
+// explore rail drag + wheel
+const rail=q('#rail');let down=false,startX,sl;
+rail.addEventListener('mousedown',e=>{if(e.target.closest('a,button,video'))return;down=true;rail.classList.add('grabbing');startX=e.pageX-rail.offsetLeft;sl=rail.scrollLeft;sfx('grab')});
+addEventListener('mouseup',()=>{down=false;rail.classList.remove('grabbing')});
+rail.addEventListener('mouseleave',()=>{down=false;rail.classList.remove('grabbing')});
+rail.addEventListener('mousemove',e=>{if(!down)return;e.preventDefault();rail.scrollLeft=sl-(e.pageX-rail.offsetLeft-startX)*1.2});
+rail.addEventListener('wheel',e=>{if(Math.abs(e.deltaY)>Math.abs(e.deltaX)){const max=rail.scrollWidth-rail.clientWidth;if((e.deltaY>0&&rail.scrollLeft<max-1)||(e.deltaY<0&&rail.scrollLeft>1)){e.preventDefault();rail.scrollLeft+=e.deltaY*.8}}},{passive:false});
+
+// lightbox
+const lb=q('#lightbox'),lbi=q('#lightboxImg');
+const gallery=qa('.zoomable').map(el=>el.tagName==='IMG'?el:el.querySelector('img')).filter(Boolean);
+qa('.lightbox-btn').forEach(b=>gallery.push({src:new URL(b.dataset.src,location.href).href,alt:'项目证明',dataset:{}}));
+let galleryIndex=0,previousFocus=null;
+function renderLB(){const item=gallery[galleryIndex];lbi.src=item.src;lbi.alt=item.alt||item.closest?.('figure,article')?.querySelector('b,h4,h3')?.textContent||'作品与证明';lbi.classList.toggle('rotated',item.dataset.rotate==='270');q('.lb-caption').textContent=`${galleryIndex+1} / ${gallery.length} · ${lbi.alt}`;}
+function openLB(src){galleryIndex=Math.max(0,gallery.findIndex(item=>item.src===src));previousFocus=document.activeElement;renderLB();lb.classList.add('open');document.body.style.overflow='hidden';q('.close').focus();sfx('open')}
+qa('.zoomable').forEach(el=>{el.tabIndex=0;el.setAttribute('role','button');el.setAttribute('aria-label','放大查看图片');const open=e=>{if(e.target.closest('a,button,video'))return;const img=el.tagName==='IMG'?el:el.querySelector('img');if(img)openLB(img.src)};el.addEventListener('click',open);el.addEventListener('keydown',e=>{if(e.target===el&&(e.key==='Enter'||e.key===' ')){e.preventDefault();open(e)}})});
+qa('.lightbox-btn').forEach(b=>b.addEventListener('click',e=>{e.stopPropagation();openLB(new URL(b.dataset.src,location.href).href)}));
+function closeLB(){if(!lb.classList.contains('open'))return;lb.classList.remove('open');document.body.style.overflow='';lbi.removeAttribute('src');previousFocus?.focus();sfx('close')}
+function stepLB(delta){galleryIndex=(galleryIndex+delta+gallery.length)%gallery.length;renderLB()}
+q('.close').onclick=closeLB;q('.lb-prev').onclick=()=>stepLB(-1);q('.lb-next').onclick=()=>stepLB(1);lb.addEventListener('click',e=>{if(e.target===lb)closeLB()});
+addEventListener('keydown',e=>{if(lb.classList.contains('open')){if(e.key==='Escape')closeLB();if(e.key==='ArrowLeft')stepLB(-1);if(e.key==='ArrowRight')stepLB(1);if(e.key==='Tab'){const buttons=qa('#lightbox button');const first=buttons[0],last=buttons.at(-1);if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}}return;}if(e.key.toLowerCase()==='g')q('#grid').classList.toggle('off')});
+
+// subtle hero parallax
+addEventListener('pointermove',e=>{const x=(e.clientX/innerWidth-.5)*12,y=(e.clientY/innerHeight-.5)*12;const p=q('.portrait');if(p)p.style.transform=`translate(${x*.38}px,${y*.38}px)`});
+
+// sound feedback (user opt-in; browser autoplay-safe)
+let audioCtx=null,soundOn=false,lastHover=0;const sb=q('#sound');
+sb.addEventListener('click',()=>{soundOn=!soundOn;if(soundOn&&!audioCtx)audioCtx=new (window.AudioContext||window.webkitAudioContext)();sb.textContent=soundOn?'SOUND ON':'SOUND OFF';sb.classList.toggle('on',soundOn);sfx('toggle')});
+function sfx(type){
+ if(!soundOn||!audioCtx)return;
+ const now=audioCtx.currentTime;if(type==='hover'&&performance.now()-lastHover<95)return;if(type==='hover')lastHover=performance.now();
+ const o=audioCtx.createOscillator(),g=audioCtx.createGain();o.connect(g);g.connect(audioCtx.destination);
+ const f={hover:510,open:720,close:300,toggle:880,grab:430,play:640}[type]||460;
+ o.type=type==='hover'?'sine':'triangle';o.frequency.setValueAtTime(f,now);
+ if(type==='open')o.frequency.exponentialRampToValueAtTime(980,now+.08);
+ if(type==='close')o.frequency.exponentialRampToValueAtTime(220,now+.07);
+ g.gain.setValueAtTime(.0001,now);g.gain.exponentialRampToValueAtTime(type==='hover'?.015:.035,now+.012);g.gain.exponentialRampToValueAtTime(.0001,now+.12);
+ o.start(now);o.stop(now+.13);
+}
+qa('a,button').forEach(el=>el.addEventListener('click',()=>sfx('open')));
+qa('video').forEach(v=>v.addEventListener('play',()=>sfx('play')));
+
+const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const cards=qa('#rail .award');
+function railPosition(){return cards.reduce((best,card,i)=>Math.abs(card.getBoundingClientRect().left-rail.getBoundingClientRect().left-parseFloat(getComputedStyle(rail).paddingLeft))<Math.abs(cards[best].getBoundingClientRect().left-rail.getBoundingClientRect().left-parseFloat(getComputedStyle(rail).paddingLeft))?i:best,0)}
+function moveRail(delta){const i=Math.max(0,Math.min(cards.length-1,railPosition()+delta));rail.scrollTo({left:cards[i].offsetLeft-cards[0].offsetLeft,behavior:reducedMotion?'instant':'smooth'})}
+function updateRail(){q('#railCount').textContent=`${railPosition()+1} / ${cards.length}`;q('#railPrev').disabled=rail.scrollLeft<=1;q('#railNext').disabled=rail.scrollLeft>=rail.scrollWidth-rail.clientWidth-1}
+q('#railPrev').onclick=()=>moveRail(-1);q('#railNext').onclick=()=>moveRail(1);rail.addEventListener('scroll',updateRail,{passive:true});addEventListener('resize',updateRail);updateRail();
+const categories=['creative','creative','creative','creative','creative','creative','culture','culture','campus','campus','campus','culture'];
+qa('.filter').forEach(button=>button.onclick=()=>{qa('.filter').forEach(b=>{b.classList.toggle('active',b===button);b.setAttribute('aria-pressed',String(b===button))});let count=0;qa('.tile').forEach((tile,i)=>{tile.hidden=button.dataset.filter!=='all'&&categories[i]!==button.dataset.filter;if(!tile.hidden)count++});q('#archiveCount').textContent=`共 ${count} 项记录`});
+function updateReading(){const h=document.documentElement.scrollHeight-innerHeight;const percent=Math.round(h>0?scrollY/h*100:0);q('#readPercent').textContent=percent+'%';let current='';qa('section[id]').forEach(section=>{if(section.getBoundingClientRect().top<=innerHeight*.4)current=section.id});qa('.navlinks a').forEach(a=>{const active=a.hash==='#'+current;a.classList.toggle('active',active);if(active)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current')})}
+addEventListener('scroll',updateReading,{passive:true});updateReading();q('.back-top').onclick=()=>scrollTo({top:0,behavior:reducedMotion?'instant':'smooth'});
+qa('video').forEach(video=>video.addEventListener('play',()=>qa('video').forEach(other=>{if(other!==video)other.pause()})));
+</script>
+</body>
+</html>
